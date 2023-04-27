@@ -3,15 +3,19 @@ import Link from 'next/link';
 
 const EventsCategoryPage = ({data, pageName}) => {
     return (
-        <div>
+        <div className='home_body'>
         <h1> Event {pageName} </h1>
         <div>
         {data.map((ev) => (
             <Link key={ev.id} href={`/events/${ev.city}/${ev.id}`} legacyBehavior>
-            <a>
-                <Image width={100} height={100} src={ev.image} />
+            <a className= 'card'>
+            <div className='image'>
+                <Image width={500} height={300} src={ev.image} />
+            </div>
+            <div className='content'>
               <h2>{ev.title}</h2>
               <p>{ev.description}</p>
+            </div>
             </a>
             </Link>
         ))}

@@ -1,21 +1,9 @@
-import Image from 'next/image'
-import Link from 'next/link';
+
+import AllEvents from '@/components/events/events-page';
 
 const eventsPage = ({data}) => {
     return (
-        <div>
-        <h1> events</h1>
-        <div>
-          {data.map(ev => (
-            <Link  key={ev.id}  href={`/events/${ev.id}`} legacyBehavior>
-            <a>
-              <Image width={100} height={100} src={ev.image} />
-              <h2>{ev.title}</h2>
-            </a>
-            </Link>
-          ))}
-        </div>
-        </div>
+        <AllEvents data={data}/>
     )
 }
 
